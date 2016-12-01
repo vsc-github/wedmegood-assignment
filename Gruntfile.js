@@ -18,7 +18,7 @@ module.exports = function (grunt) {
     // Configurable paths
     var config = {
         app: 'app',
-        dist: 'dist'
+        docs: 'docs'
     };
 
     // Define the configuration for all the tasks
@@ -101,9 +101,9 @@ module.exports = function (grunt) {
                     }
                 }
             },
-            dist: {
+            docs: {
                 options: {
-                    base: '<%= config.dist %>',
+                    base: '<%= config.docs %>',
                     livereload: false
                 }
             }
@@ -111,13 +111,13 @@ module.exports = function (grunt) {
 
         // Empties folders to start fresh
         clean: {
-            dist: {
+            docs: {
                 files: [{
                     dot: true,
                     src: [
                         '.tmp',
-                        '<%= config.dist %>/*',
-                        '!<%= config.dist %>/.git*'
+                        '<%= config.docs %>/*',
+                        '!<%= config.docs %>/.git*'
                     ]
                 }]
             },
@@ -156,7 +156,7 @@ module.exports = function (grunt) {
                     'bower_components/neat/app/assets/stylesheets/'
                 ]
             },
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/sass',
@@ -181,7 +181,7 @@ module.exports = function (grunt) {
             options: {
                 browsers: ['last 1 version']
             },
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '.tmp/styles/',
@@ -203,14 +203,14 @@ module.exports = function (grunt) {
 
         // Renames files for browser caching purposes
         rev: {
-            dist: {
+            docs: {
                 files: {
                     src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
-                        '<%= config.dist %>/styles/{,*/}*.css',
-                        '<%= config.dist %>/images/{,*/}*.*',
-                        '<%= config.dist %>/styles/fonts/{,*/}*.*',
-                        '<%= config.dist %>/*.{ico,png}'
+                        '<%= config.docs %>/scripts/{,*/}*.js',
+                        '<%= config.docs %>/styles/{,*/}*.css',
+                        '<%= config.docs %>/images/{,*/}*.*',
+                        '<%= config.docs %>/styles/fonts/{,*/}*.*',
+                        '<%= config.docs %>/*.{ico,png}'
                     ]
                 }
             }
@@ -221,7 +221,7 @@ module.exports = function (grunt) {
         // additional tasks can operate on them
         useminPrepare: {
             options: {
-                dest: '<%= config.dist %>'
+                dest: '<%= config.docs %>'
             },
             html: '<%= config.app %>/index.html'
         },
@@ -229,37 +229,37 @@ module.exports = function (grunt) {
         // Performs rewrites based on rev and the useminPrepare configuration
         usemin: {
             options: {
-                assetsDirs: ['<%= config.dist %>', '<%= config.dist %>/images']
+                assetsDirs: ['<%= config.docs %>', '<%= config.docs %>/images']
             },
-            html: ['<%= config.dist %>/{,*/}*.html'],
-            css: ['<%= config.dist %>/styles/{,*/}*.css']
+            html: ['<%= config.docs %>/{,*/}*.html'],
+            css: ['<%= config.docs %>/styles/{,*/}*.css']
         },
 
-        // The following *-min tasks produce minified files in the dist folder
+        // The following *-min tasks produce minified files in the docs folder
         imagemin: {
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/images',
                     src: '{,*/}*.{gif,jpeg,jpg,png}',
-                    dest: '<%= config.dist %>/images'
+                    dest: '<%= config.docs %>/images'
                 }]
             }
         },
 
         svgmin: {
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     cwd: '<%= config.app %>/images',
                     src: '{,*/}*.svg',
-                    dest: '<%= config.dist %>/images'
+                    dest: '<%= config.docs %>/images'
                 }]
             }
         },
 
         htmlmin: {
-            dist: {
+            docs: {
                 options: {
                     collapseBooleanAttributes: true,
                     collapseWhitespace: true,
@@ -272,9 +272,9 @@ module.exports = function (grunt) {
                 },
                 files: [{
                     expand: true,
-                    cwd: '<%= config.dist %>',
+                    cwd: '<%= config.docs %>',
                     src: '{,*/}*.html',
-                    dest: '<%= config.dist %>'
+                    dest: '<%= config.docs %>'
                 }]
             }
         },
@@ -283,9 +283,9 @@ module.exports = function (grunt) {
         // minification. These next options are pre-configured if you do not wish
         // to use the Usemin blocks.
         // cssmin: {
-        //     dist: {
+        //     docs: {
         //         files: {
-        //             '<%= config.dist %>/styles/main.css': [
+        //             '<%= config.docs %>/styles/main.css': [
         //                 '.tmp/styles/{,*/}*.css',
         //                 '<%= config.app %>/styles/{,*/}*.css'
         //             ]
@@ -293,26 +293,26 @@ module.exports = function (grunt) {
         //     }
         // },
         // uglify: {
-        //     dist: {
+        //     docs: {
         //         files: {
-        //             '<%= config.dist %>/scripts/scripts.js': [
-        //                 '<%= config.dist %>/scripts/scripts.js'
+        //             '<%= config.docs %>/scripts/scripts.js': [
+        //                 '<%= config.docs %>/scripts/scripts.js'
         //             ]
         //         }
         //     }
         // },
         // concat: {
-        //     dist: {}
+        //     docs: {}
         // },
 
         // Copies remaining files to places other tasks can use
         copy: {
-            dist: {
+            docs: {
                 files: [{
                     expand: true,
                     dot: true,
                     cwd: '<%= config.app %>',
-                    dest: '<%= config.dist %>',
+                    dest: '<%= config.docs %>',
                     src: [
                         '*.{ico,png,txt}',
                         '.htaccess',
@@ -334,14 +334,14 @@ module.exports = function (grunt) {
         // Generates a custom Modernizr build that includes only the tests you
         // reference in your app
         modernizr: {
-            dist: {
+            docs: {
                 devFile: 'bower_components/modernizr/modernizr.js',
-                outputFile: '<%= config.dist %>/scripts/vendor/modernizr.js',
+                outputFile: '<%= config.docs %>/scripts/vendor/modernizr.js',
                 files: {
                     src: [
-                        '<%= config.dist %>/scripts/{,*/}*.js',
-                        '<%= config.dist %>/styles/{,*/}*.css',
-                        '!<%= config.dist %>/scripts/vendor/*'
+                        '<%= config.docs %>/scripts/{,*/}*.js',
+                        '<%= config.docs %>/styles/{,*/}*.css',
+                        '!<%= config.docs %>/scripts/vendor/*'
                     ]
                 },
                 uglify: true
@@ -357,7 +357,7 @@ module.exports = function (grunt) {
             test: [
                 'copy:styles'
             ],
-            dist: [
+            docs: [
                 'sass',
                 'copy:styles'
             ]
@@ -366,8 +366,8 @@ module.exports = function (grunt) {
 
 
     grunt.registerTask('serve', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'connect:dist:keepalive']);
+        if (target === 'docs') {
+            return grunt.task.run(['build', 'connect:docs:keepalive']);
         }
 
         grunt.task.run([
@@ -400,13 +400,13 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('build', [
-        'clean:dist',
+        'clean:docs',
         'useminPrepare',
-        'concurrent:dist',
+        'concurrent:docs',
         'autoprefixer',
         'concat',
         'cssmin',
-        'copy:dist',
+        'copy:docs',
         'modernizr',
         'rev',
         'usemin',
