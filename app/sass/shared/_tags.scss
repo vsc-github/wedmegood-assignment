@@ -18,6 +18,15 @@
       padding: 8px;
       margin: 5px;
       font-size: 13px;
+      cursor: pointer;
+      &:active{
+        transition: all 60ms ease;
+        transform: scale(.97);
+        opacity: .85;
+      }
+      &:hover{
+
+      }
     }
     .active{
       background-color: $default-pink;
