@@ -1,0 +1,27 @@
+.tags{
+  .heading{
+    @include span-columns(2);
+    text-align:right;
+    margin-top: 3%;
+    font-weight: bold;
+  }
+  .all-pills{
+    @include span-columns(10);
+    margin-top: 2%;
+
+    .pills{
+      display: inline-block;
+      border: 1px solid #d6d3d3;
+      -webkit-border-radius:2px;
+      -moz-border-radius:2px;
+      border-radius:2px;
+      padding: 8px;
+      margin: 5px;
+      font-size: 13px;
+    }
+    .active{
+      background-color: $default-pink;
+      color: $snow;
+    }
+  }
+}

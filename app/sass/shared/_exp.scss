@@ -1,0 +1,114 @@
+.exp {
+  @include span-columns(8);
+  @include shift(2);
+  background-color: $bg-color2;
+
+  #heading{
+    @include span-columns(8 of 8);
+    text-align:center;
+    font-size: 2em;
+    font-weight: bold;
+    color: #4d4d4d;
+    margin-bottom: 20px;
+    margin-top: 30px;
+  }
+
+  #left{
+    @include span-columns(3.5 of 8);
+    @include omega;
+    margin-left: 45px;
+  }
+
+  #mid{
+    @include span-columns(0.8 of 8);
+    @include omega;
+    margin-top:40px;
+    #left-border{
+      @include span-columns(0.4 of 0.8);
+      @include omega;
+      margin-left: 15px;
+      height:500px;
+      border-right: 1px solid #bee8d4;
+    }
+    #right-border{
+      @include span-columns(0.4 of 0.8);
+      @include omega;
+      height:500px;
+      border-left: 1px solid #bee8d4;
+    }
+  }
+
+  #right{
+    @include span-columns(3.5 of 8);
+    @include omega;
+    margin-top: 50px;
+  }
+  .no-right{margin-right:0 !important; margin-left: 60px !important;}
+  .no-left{margin-left:0 !important;  margin-right: 60px !important;}
+
+  .box{
+    position: relative;
+    margin:20px;
+    background-color: white;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+    padding: 20px 10px 20px 20px;
+    border-top: 4px solid #27d37d;
+    border-radius: 1px;
+    font-size: 0.8em;
+    text-align: left;
+    color: rgba(0,0,0,0.6);
+
+    .right-arrow{
+      position: absolute;
+      right: -16px;
+    }
+    .left-dot{
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      right: -32px;
+      top: 37px;
+      background-color: $green-accent;
+    }
+
+    .left-arrow{
+      position: absolute;
+      left: -22px;
+    }
+    .right-dot{
+      width:6px;
+      height: 6px;
+      border-radius: 50%;
+      position: absolute;
+      left: -34px;
+      top: 37px;
+      background-color: $green-accent;
+    }
+
+    .duration{
+      @include span-columns(3.5 of 3.5);
+      font-size: 0.7em;
+      font-weight: bold;
+      color: #00cc65;
+      text-align: center;
+    }
+    .company{
+      @include span-columns(3.5 of 3.5);
+      text-transform: uppercase;
+      font-weight: bold;
+      color: rgba(0,0,0,0.65);
+      margin: 8px 0;
+      text-align: center;
+    }
+    .post{
+      @include span-columns(3.5 of 3.5);
+      font-size: 0.6em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.6);
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+  }
+}

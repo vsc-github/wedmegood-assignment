@@ -1,0 +1,51 @@
+.gallery{
+  @include span-columns(11);
+  @include shift(1);
+  margin-top: 4%;
+  margin-bottom: 5%;
+
+  .one{
+    @include span-columns(2.7);
+  }
+  .two{
+    @include span-columns(2.7);
+  }
+  .three{
+    @include span-columns(2.7);
+  }
+  .four{
+    @include span-columns(2.7);
+  }
+
+  .card{
+    box-shadow: .5px .9px 5px 0 rgba(0,0,0,.2);
+    border-radius: 2px;
+    overflow: auto;
+    margin-bottom: 10%;
+    img{width:100%;}
+
+
+    .sub-card{
+      img{
+          width:18%;
+          float:left;
+          -webkit-border-radius:5px;
+          -moz-border-radius:5px;
+          border-radius:5px;
+        margin: 5px 8px 10px 8px;
+      }
+      .name{
+        float:left;
+        font-size:13px;
+        font-weight: bold;
+        color:$default-pink;
+        margin-top: 2%;
+      }
+      .desc{
+        float:left;
+        font-size:13px;
+      }
+    }
+
+  }
+}

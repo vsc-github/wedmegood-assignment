@@ -1,0 +1,85 @@
+.intro {
+	@include span-columns(8);
+	@include shift(2);
+	background-color:white;
+	@include omega;
+
+	#left{
+		@include span-columns(2.5 of 6);@include omega;
+
+		img{
+			width:100%;
+			padding: 30px;
+		}
+	}
+	#right{
+		@include span-columns(3.5 of 6);
+		padding: 30px 30px 0px 0;
+
+		#up{
+			#hello{
+				display: inline-block;
+				color: white;
+				font-weight: bold;
+        font-size: 12px;
+				background-color: $green-accent;
+				padding: 3px 10px;
+				margin-bottom: 10px;
+        position: relative;
+        text-transform: uppercase;
+        img{
+          position: absolute;
+          top: 23px;
+          left: 0;
+        }
+			}
+			#name{
+				font-size: 2em;
+        color: #3d4450;
+			}
+		}
+		#separator {
+			border-bottom: 1px solid rgba(76, 84, 95, 0.25);
+			margin: 5% 0;
+		}
+		#down{
+		font-size: 0.8em;
+
+		div{
+			margin-bottom: 15px;
+		}
+
+			#heading{
+				@include span-columns(1.5 of 6);
+				font-weight: bold;
+        color: rgba(0,0,0,0.6);
+			  text-transform: uppercase;
+
+        #vacation{
+          display: inline-block;
+          background-color: #26cb63;
+          color: White;
+          padding: 1px 4px;
+          font-size: 10px;
+          border-radius: 3px;
+        }
+      }
+
+			#detail{
+				@include span-columns(4.5 of 6);
+        color: #b2b3b6;
+        #calendar{
+          float: left;
+          margin-left: -5px;
+        }
+			}
+
+		}
+	}
+	#bottom{
+		@include span-columns(12);
+		background-color:#26cb63;
+		text-align:center;
+		img{ width:25px; margin: 18px 25px 15px 0}
+	}
+}

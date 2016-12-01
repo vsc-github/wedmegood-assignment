@@ -1,0 +1,81 @@
+.skills{
+    @include span-columns(8);
+    @include shift(2);
+    background-color: $bg-color2;
+    font-size: 0.9em;
+
+    #heading{
+        @include span-columns(8 of 8);
+        text-align:center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #4d4d4d;
+        margin-bottom: 20px;
+        margin-top: 30px;
+    }
+
+    #progress{
+        @include span-columns(8 of 8);
+        padding: 30px;
+        background-color: white;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+
+        .bar{
+            @include span-columns(4 of 4);
+            position: relative;
+            margin-bottom:30px;
+
+            #skill {
+                color: rgb(61, 68, 81);
+            }
+
+            #amount {
+                color: rgb(61, 68, 81);
+                left: 373.531px;
+                position: absolute;
+           }
+
+            #progbar {
+                position: relative;
+                width: 405px;
+            }
+
+            #progbar:after {
+                content: '';
+                display: block;
+                height: 5px;
+                opacity: 0.2;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                width: 405px;
+                background: rgb(7, 203, 121) none repeat scroll 0% 0% / auto;
+            }
+
+            .prog {
+                display: block;
+                height: 5px;
+                width: 218.688px;
+                background: rgb(7, 203, 121) none repeat scroll 0% 0% / auto;
+                }
+
+                    #a{width: 280.688px;}
+                    #b{width: 180.688px;}
+                    #c{width: 380.688px;}
+                    #d{width: 290.688px;}
+                    #e{width: 258.688px;}
+                    #f{width: 202.688px;}
+
+        }
+         #left{
+            @include span-columns(4 of 8);
+         }
+         #right{
+            @include span-columns(4 of 8);
+
+        .bar{
+            @include span-columns(4 of 4);
+        }
+         }
+    }
+}

@@ -1,0 +1,24 @@
+.resume{
+
+	@include span-columns(8);
+	@include shift(2);
+	background-color: $bg-color2;
+	text-align: center;
+
+	#download{
+		display: inline-block;
+		margin: 30px 0;
+		text-align: center;
+		padding: 15px 50px;
+		font-size: 0.9em;
+		font-weight: bold;
+		color: #4d4d4d;
+		border: 1px solid rgba(77,77,77,0.3);
+	}
+	#description{
+		text-align:center;
+		margin: 0 40px;
+		line-height: 1.9em;
+		margin-bottom: 30px;
+	}
+}

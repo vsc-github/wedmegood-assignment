@@ -1,0 +1,7 @@
+body {
+	@include outer-container;
+	    max-width: initial;
+	height: 100vh;
+  background-color: #fbfbfb;
+	font-family: "Open Sans", sans-serif;
+}

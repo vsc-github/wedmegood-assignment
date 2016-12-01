@@ -1,0 +1,130 @@
+.portfolio{
+    @include span-columns(8);
+    @include shift(2);
+    background-color: $bg-color2;
+    text-align:center;
+
+    #heading{
+        @include span-columns(8 of 8);
+        text-align:center;
+        font-size: 2em;
+        font-weight: bold;
+        color: #4d4d4d;
+        margin: 30px 0;
+    }
+
+    #slider{
+    	display: inline-block;
+    	border-bottom: 4px solid white;
+    	padding-bottom: 7px;
+
+    	span{
+    		margin-left: 20px;
+    		padding-bottom: 9px;
+    		text-transform: uppercase;
+    		font-size: 0.6em;
+    		}
+
+    	.activeSliderUnit{
+    		border-bottom: 4px solid $darker-accent;
+    	}
+
+    	#all{margin-left:0;}
+    }
+
+    #album{
+    	@include span-columns(8 of 8);
+    	height: 500px;
+    	margin-top: 20px;
+
+    	#main{
+	    	@include span-columns(5 of 8);
+	    	padding: 0 0 0 30px;
+
+	    	.project{
+	    		background-color: white;
+	    		height: 500px;
+	    		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+	    	}
+
+        #hoveredProject{
+          display:none;
+          padding: 5%;
+          background-color: $hovered-project;
+          height:100%;
+          color: white;
+          text-align: left;
+
+          #head{
+            @include span-columns(5 of 5);
+            font-weight: bold;
+            margin: 60% 0 2% 0;
+          }
+          #sub{
+            @include span-columns(5 of 5);
+            color: rgba(244,244,244,.5);
+            font-size: 0.7em;
+          }
+          img{    margin-left: -1%; margin-top: 8%;}
+        }
+
+        &:hover #hoveredProject{
+          display:block;
+        }
+    	}
+    	#sub{
+    		@include span-columns(3 of 8);
+    		padding-right: 30px;
+
+    		#sub1{
+    			@include span-columns(3 of 3);
+	    		background-color: white;
+	    		height: 235px;
+	    		margin-bottom:30px;
+	    		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+          #sub-project1{
+            display:none;
+            padding: 5%;
+            background-color: $hovered-project;
+            height:100%;
+            color: white;
+            text-align: left;
+            padding-top: 65%;
+            font-weight: bold;
+          }
+          &:hover #sub-project1{
+            display:block;
+          }
+    		}
+    		#sub2{
+    			@include span-columns(3 of 3);
+	    		background-color: white;
+	    		height: 235px;
+	    		box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
+          #sub-project2{
+            display:none;
+            padding: 5%;
+            background-color: $hovered-project;
+            height:100%;
+            color: white;
+            text-align: left;
+            padding-top: 65%;
+            font-weight: bold;
+          }
+          &:hover #sub-project2{
+            display:block;
+          }
+    		}
+    	}
+	}
+
+	#more{
+    	@include span-columns(0.6 of 8);
+    	@include shift(3.7);
+    	text-align:center;
+	  	padding: 5px;
+	  	border: 1px solid rgba(0,0,0,0.2);
+    	margin-top: 30px;
+    	margin-bottom: 20px;
+	}
+}
